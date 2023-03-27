@@ -1,6 +1,13 @@
 import * as React from "react";
 import { StatusBar } from "expo-status-bar";
-import { Image, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import {
+  Image,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { Video } from "expo-av";
 import { Entypo } from "@expo/vector-icons";
 
@@ -32,13 +39,61 @@ const App = () => {
           </View>
         </SafeAreaView>
         <View style={styles.bottomView}>
-          <View>
+          <View style={[styles.flexBox, { justifyContent: "flex-start" }]}>
             <Image
               source={{
-                uri: "https://img.freepik.com/free-vector/mysterious-mafia-man-smoking-cigarette_52683-34828.jpg?w=1380&t=st=1679938718~exp=1679939318~hmac=c7f0bdf7da06d383d0e7a121304547174f972ccf37b472735e4f4299b9c804d0",
+                uri: "https://img.icons8.com/plasticine/100/null/name.png",
               }}
-              style={{ height: 50, width: 50, borderRadius: 10 }}
+              style={{
+                height: 45,
+                width: 45,
+              }}
             />
+            <Text
+              style={[
+                styles.textStyle,
+                { color: "#000", marginHorizontal: 10 },
+              ]}
+            >
+              Ansh Modi
+            </Text>
+            <TouchableOpacity
+              style={{ backgroundColor: "#fff", borderRadius: 10, padding: 5 }}
+            >
+              <Text style={[styles.textStyle, { color: "#000" }]}>Follow</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={[styles.flexBox, { justifyContent: "center" }]}>
+            <Text
+              style={[
+                styles.textStyle,
+                {
+                  color: "#000",
+                  marginLeft: 10,
+                  fontSize: 14,
+                  fontWeight: "400",
+                  flex: 1,
+                },
+              ]}
+              numberOfLines={1}
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+              quo doloribus inventore modi repudiandae accusamus fugiat
+            </Text>
+            <TouchableOpacity>
+              <Text
+                style={[
+                  styles.textStyle,
+                  {
+                    color: "#000",
+                    fontSize: 15,
+                    fontWeight: "500",
+                  },
+                ]}
+              >
+                More
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
