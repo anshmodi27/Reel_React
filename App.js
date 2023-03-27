@@ -14,6 +14,7 @@ import { Entypo } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { SwiperFlatList } from "react-native-swiper-flatlist";
+import { LinearGradient } from "expo-linear-gradient";
 
 const { height, width } = Dimensions.get("window");
 
@@ -42,12 +43,14 @@ const App = () => {
           }}
           style={styles.backgroundVideo}
           shouldPlay={true}
-          // onPlaybackStatusUpdate={curIndex !== index}
           volume={1}
           muted={false}
           resizeMode="cover"
         />
-        <View style={styles.bottomView}>
+        <LinearGradient
+          colors={["rgba(0,0,0,0.1)", "rgba(0,0,0,0.6)"]}
+          style={styles.bottomView}
+        >
           {/* User */}
           <View style={[styles.flexBox, { justifyContent: "flex-start" }]}>
             <Image
@@ -59,12 +62,7 @@ const App = () => {
                 width: 45,
               }}
             />
-            <Text
-              style={[
-                styles.textStyle,
-                { color: "#000", marginHorizontal: 10 },
-              ]}
-            >
+            <Text style={[styles.textStyle, { marginHorizontal: 10 }]}>
               Ansh Modi
             </Text>
             <TouchableOpacity
@@ -86,7 +84,6 @@ const App = () => {
               style={[
                 styles.textStyle,
                 {
-                  color: "#000",
                   marginLeft: 10,
                   fontSize: 14,
                   fontWeight: "400",
@@ -103,7 +100,6 @@ const App = () => {
                 style={[
                   styles.textStyle,
                   {
-                    color: "#000",
                     fontSize: 15,
                     fontWeight: "500",
                   },
@@ -125,21 +121,21 @@ const App = () => {
                 },
               ]}
             >
-              <Feather name="heart" size={26} color="#000" />
+              <Feather name="heart" size={26} color="#fff" />
               <FontAwesome5
                 style={{ marginHorizontal: 10 }}
                 name="comment-alt"
                 size={24}
-                color="black"
+                color="#fff"
               />
-              <Feather name="send" size={24} color="black" />
+              <Feather name="send" size={24} color="#fff" />
               <Feather
                 style={{ marginHorizontal: 10 }}
                 name="save"
                 size={24}
-                color="black"
+                color="#fff"
               />
-              <Feather name="more-horizontal" size={24} color="black" />
+              <Feather name="more-horizontal" size={24} color="#fff" />
             </View>
             <View
               style={[
@@ -171,7 +167,7 @@ const App = () => {
               </View>
             </View>
           </View>
-        </View>
+        </LinearGradient>
       </View>
     );
   };
