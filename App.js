@@ -10,6 +10,8 @@ import {
 } from "react-native";
 import { Video } from "expo-av";
 import { Entypo } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
+import { FontAwesome5 } from "@expo/vector-icons";
 
 const App = () => {
   const videoRef = React.useRef(null);
@@ -39,6 +41,7 @@ const App = () => {
           </View>
         </SafeAreaView>
         <View style={styles.bottomView}>
+          {/* User */}
           <View style={[styles.flexBox, { justifyContent: "flex-start" }]}>
             <Image
               source={{
@@ -58,12 +61,20 @@ const App = () => {
               Ansh Modi
             </Text>
             <TouchableOpacity
-              style={{ backgroundColor: "#fff", borderRadius: 10, padding: 5 }}
+              style={{
+                backgroundColor: "rgba( 255, 255, 255, 0.5 )",
+                borderRadius: 10,
+                paddingVertical: 3,
+                paddingHorizontal: 10,
+              }}
             >
               <Text style={[styles.textStyle, { color: "#000" }]}>Follow</Text>
             </TouchableOpacity>
           </View>
-          <View style={[styles.flexBox, { justifyContent: "center" }]}>
+          {/* Description */}
+          <View
+            style={[styles.flexBox, { justifyContent: "center", marginTop: 8 }]}
+          >
             <Text
               style={[
                 styles.textStyle,
@@ -94,6 +105,64 @@ const App = () => {
                 More
               </Text>
             </TouchableOpacity>
+          </View>
+          {/* Buttons */}
+          <View style={styles.flexBox}>
+            <View
+              style={[
+                styles.flexBox,
+                {
+                  justifyContent: "flex-start",
+                  marginHorizontal: 10,
+                  marginTop: 10,
+                },
+              ]}
+            >
+              <Feather name="heart" size={26} color="#000" />
+              <FontAwesome5
+                style={{ marginHorizontal: 10 }}
+                name="comment-alt"
+                size={24}
+                color="black"
+              />
+              <Feather name="send" size={24} color="black" />
+              <Feather
+                style={{ marginHorizontal: 10 }}
+                name="save"
+                size={24}
+                color="black"
+              />
+              <Feather name="more-horizontal" size={24} color="black" />
+            </View>
+            <View
+              style={[
+                styles.flexBox,
+                {
+                  justifyContent: "flex-start",
+                  marginHorizontal: 10,
+                  marginTop: 10,
+                },
+              ]}
+            >
+              <View style={styles.flexBox}>
+                <Feather
+                  style={{ marginHorizontal: 10 }}
+                  name="heart"
+                  size={18}
+                  color="#fff"
+                />
+                <Text style={[styles.textStyle, { fontSize: 13 }]}>94.6K</Text>
+              </View>
+              <View style={styles.flexBox}>
+                <FontAwesome5
+                  style={{ marginHorizontal: 10 }}
+                  name="comment-alt"
+                  size={18}
+                  color="#fff"
+                />
+                <Text style={[styles.textStyle, { fontSize: 13 }]}>94.6K</Text>
+              </View>
+            </View>
           </View>
         </View>
       </View>
@@ -129,7 +198,7 @@ const styles = StyleSheet.create({
   bottomView: {
     flex: 1,
     justifyContent: "flex-end",
-    paddingVertical: 32,
+    paddingVertical: 35,
     paddingHorizontal: 20,
   },
 });
