@@ -1,7 +1,8 @@
 import * as React from "react";
 import { StatusBar } from "expo-status-bar";
-import { Button, StyleSheet, Text, View } from "react-native";
+import { Image, SafeAreaView, StyleSheet, Text, View } from "react-native";
 import { Video } from "expo-av";
+import { Entypo } from "@expo/vector-icons";
 
 const App = () => {
   const videoRef = React.useRef(null);
@@ -20,13 +21,25 @@ const App = () => {
           style={styles.backgroundVideo}
           rate={1}
           shouldPlay={true}
-          useNativeControls={true}
           volume={1}
           muted={false}
           resizeMode="cover"
         />
-        <View style={styles.flexBox}>
-          <Text>Reels</Text>
+        <SafeAreaView>
+          <View style={[styles.flexBox, { paddingHorizontal: 20 }]}>
+            <Text style={styles.textStyle}>Reels</Text>
+            <Entypo name="camera" size={24} color="#fff" />
+          </View>
+        </SafeAreaView>
+        <View style={styles.bottomView}>
+          <View>
+            <Image
+              source={{
+                uri: "https://img.freepik.com/free-vector/mysterious-mafia-man-smoking-cigarette_52683-34828.jpg?w=1380&t=st=1679938718~exp=1679939318~hmac=c7f0bdf7da06d383d0e7a121304547174f972ccf37b472735e4f4299b9c804d0",
+              }}
+              style={{ height: 50, width: 50, borderRadius: 10 }}
+            />
+          </View>
         </View>
       </View>
       <StatusBar style="auto" />
@@ -40,8 +53,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#000",
-    alignItems: "center",
-    justifyContent: "center",
   },
   backgroundVideo: {
     position: "absolute",
@@ -56,6 +67,14 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   textStyle: {
-    fontSize: 16,
+    fontSize: 18,
+    fontWeight: "600",
+    color: "#fff",
+  },
+  bottomView: {
+    flex: 1,
+    justifyContent: "flex-end",
+    paddingVertical: 32,
+    paddingHorizontal: 20,
   },
 });
