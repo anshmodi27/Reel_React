@@ -6,7 +6,7 @@ import { Video } from "expo-av";
 const App = () => {
   const videoRef = React.useRef(null);
   return (
-    <View style={styles.container}>
+    <View>
       <Video
         ref={videoRef}
         // source={{
@@ -32,7 +32,7 @@ export default App;
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
+    flex: 1,
     backgroundColor: "#000",
     alignItems: "center",
     justifyContent: "center",
